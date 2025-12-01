@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Papa from 'papaparse';
 
 interface CSVRow {
@@ -1038,11 +1038,133 @@ const REFERENCE_DATA: { [key: string]: CSVRow } = {
   },
 };
 
+// Full Asthma CSV data
+const getAsthmaChecklistData = (): CSVRow[] => {
+  return [
+    { section: 'Subjective', label: 'CC: Chief Complaint', item: '"Shortness of Breath"', points: '1', guidance: 'Novice learners may be asked to gather and document the chief complaint in their note. This should be case specific so that they document the correct chief complaint.' },
+    { section: 'Subjective', label: 'Dem: Name - Female', item: 'INSERT PATIENT NAME FOR GRADING - need the alternate name below if male-female actors', points: '1', guidance: 'If a point is desired for the name, and a male or female actor may play with different names, use both names in the male and female items, knowing that only 1 point will be acquired either way.' },
+    { section: 'Subjective', label: 'Dem: Name - Male', item: 'INSERT PATIENT NAME FOR GRADING - need the alternate name above if male-female actors', points: '1', guidance: '' },
+    { section: 'Subjective', label: 'Dem: Patient Age or Date of Birth', item: '30 years', points: '1', guidance: 'Novice learners or learning settings with age not provided (initial triage nurse), the learners may be asked to gather and document the age or date of birth in their note.' },
+    { section: 'Subjective', label: 'Dem: Patient Biological Sex', item: 'INSERT PATIENT BIOLOGICAL SEX', points: '1', guidance: 'If learners are to gather biologic sex, the presence or absence of sex designation may be graded. Case specific grading requires the sex designation to be noted in the item.' },
+    { section: 'Subjective', label: 'Dem: Patient Gender Identification', item: '', points: '0', guidance: 'If learners are to gather gender identification, this could be graded. Case specific grading requires the gender identification to be noted in the item.' },
+    { section: 'Subjective', label: 'HPI: subitem onset timing', item: 'A FEW (FOUR) MONTHS AGO', points: '1', guidance: 'When were symptoms first noticed?' },
+    { section: 'Subjective', label: 'HPI: subitem onset speed', item: '', points: '0', guidance: 'Did the symptoms begin rapidly or slowly?' },
+    { section: 'Subjective', label: 'HPI: subitem duration', item: 'A FEW (FOUR) MONTHS OR SINCE STARTING NEW JOB', points: '1', guidance: 'How long have you had the symptoms?' },
+    { section: 'Subjective', label: 'HPI: subitem duration', item: 'UNITL RESCUE INHALER IS USED', points: '1', guidance: 'How long do episodes of pain last?' },
+    { section: 'Subjective', label: 'HPI: subitem timing', item: 'AT WORK', points: '1', guidance: 'Is there a pattern of the timing of the pain (day/night, situational timing)?' },
+    { section: 'Subjective', label: 'HPI: subitem location', item: 'IN THE CHEST', points: '1', guidance: 'Where on the body is your pain or describe where you are feeling the symptom?' },
+    { section: 'Subjective', label: 'HPI: subitem location radiation', item: 'NO RADIATION', points: '1', guidance: 'Does the pain move anywhere else or radiate from one spot to another?' },
+    { section: 'Subjective', label: 'HPI: subitem character', item: 'TIGHTNESS IN THE CHEST', points: '1', guidance: 'Describe the nature of the pain or symptom i.e. sharp, burning, throbbing, dull, aching, pressure, stabbing, tingling' },
+    { section: 'Subjective', label: 'HPI: subitem severity', item: '', points: '0', guidance: 'How severe is you pain? How does this compare to past episodes?' },
+    { section: 'Subjective', label: 'HPI: subitem severity scale required', item: '7 out of 10', points: '1', guidance: 'How severe is the pain on a scale of 0-10?' },
+    { section: 'Subjective', label: 'HPI: subitem aggravating factors', item: 'WORKING', points: '1', guidance: 'Are there activities (eating, exercise, standing, etc.) that make the symptom worse? Have you noticed things that trigger the symptoms?' },
+    { section: 'Subjective', label: 'HPI: subitem relieving factors', item: 'RESCUE (ALBUTEROL) INHALER', points: '1', guidance: 'Have you found something that relieves the symptoms (medication, position, eating, etc.)?' },
+    { section: 'Subjective', label: 'HPI: subitem relevant exposures', item: 'SAW DUST', points: '1', guidance: 'Any relevant infectious or occuptional exposures? (e.g. covid illness in sibling, asbestos exposure)' },
+    { section: 'Subjective', label: 'HPI: OutcomeAdditional Circumstances/Signs or Symptoms/Affecting life', item: 'FEAR OF LOSING JOB', points: '1', guidance: 'Consider the learning objectives and relevance of such topics.' },
+    { section: 'Subjective', label: 'PMH: Similar episodes', item: 'AS A CHILD', points: '1', guidance: 'Items like past episodes of the symptom, visits for this, past treatment response' },
+    { section: 'Subjective', label: 'PMH: Active Problem List', item: 'NONE', points: '1', guidance: 'Active diagnoses with or without treatment' },
+    { section: 'Subjective', label: 'PMH: Hospitalizations and Past Illness', item: 'NONE', points: '1', guidance: 'Hospitalizations and old or remote illnesses' },
+    { section: 'Subjective', label: 'PMH: Medications: Medication name', item: 'ALBUTEROL INHALER', points: '1', guidance: 'Medication names (if faculty note the generic and trade names credit will be given for either, likewise credit will be given for acceptable abbreviations listed)' },
+    { section: 'Subjective', label: 'PMH: Medications: Dosing', item: '2 PUFFS AS NEEDED', points: '1', guidance: 'Medication route, frequency' },
+    { section: 'Subjective', label: 'PMH: Medications: Adherence', item: 'COMPLIANT OR ADHERANT OR USING AS DIRECTED', points: '1', guidance: 'Documentation of medication adherence' },
+    { section: 'Subjective', label: 'PMH: Allergies medications', item: 'NONE', points: '1', guidance: 'If allergy item gives both trade and generic then either noted by the learner would count. If the item notes what the reactions is, then that would be needed be needed for credit e.g. erythromycin causes hives. If the reaction type is not noted, it will not be graded.' },
+    { section: 'Subjective', label: 'PMH: Allergies food or environmental', item: 'NONE', points: '1', guidance: 'If the reaction type is not noted, it will not be graded.' },
+    { section: 'Subjective', label: 'PMH: Recovery or Abstinence from any substances or alcohol', item: '', points: '0', guidance: 'For capture of prior addiction treatment, recovery status' },
+    { section: 'Subjective', label: 'PSH: Past Surgeries', item: 'NONE', points: '1', guidance: 'Specific and separate headings for past surgical history, abbrevations count, option to make each surgery noted an item, or simply capture a list.' },
+    { section: 'Subjective', label: 'PSH: Complications', item: '', points: '0', guidance: 'Only use if relevant to case learning objectives.' },
+    { section: 'Subjective', label: 'FH: HPI: Relevant', item: 'ADOPTED', points: '1', guidance: 'Items that are relevant to an active CC-HPI: combination. e.g. FH of heart disease in a chest pain patient' },
+    { section: 'Subjective', label: 'FH: Preventive Relevant', item: '', points: '0', guidance: 'Items that are relevant to any wellness or preventive visit. This would include genetic diseases, risks for cancer, prior occupational exposures, etc.' },
+    { section: 'Subjective', label: 'SH: relationships and/or marital status', item: 'SINGLE', points: '1', guidance: '' },
+    { section: 'Subjective', label: 'SH: children', item: '', points: '0', guidance: '' },
+    { section: 'Subjective', label: 'SH: occupation', item: 'ENGINEER', points: '1', guidance: '' },
+    { section: 'Subjective', label: 'SH: military service', item: '', points: '0', guidance: '' },
+    { section: 'Subjective', label: 'SH: alcohol use', item: 'NONE', points: '1', guidance: 'Use if current alcohol use is relevant to the case.' },
+    { section: 'Subjective', label: 'SH: tobacco product use', item: 'NONE', points: '1', guidance: '' },
+    { section: 'Subjective', label: 'SH: vaping use', item: 'NONE', points: '1', guidance: '' },
+    { section: 'Subjective', label: 'SH: non-prescribed drug use', item: 'MARIJUANA', points: '1', guidance: '' },
+    { section: 'Subjective', label: 'SH: housing security', item: '', points: '0', guidance: 'Use if housing security discussion is relevant to the case' },
+    { section: 'Subjective', label: 'SH: food security', item: '', points: '0', guidance: 'Use of food security discussion is relevant to the case' },
+    { section: 'Subjective', label: 'SH: physical security', item: '', points: '0', guidance: 'Use if physical security (risk of interpersonal violence) is relevant to the case' },
+    { section: 'Subjective', label: 'SH: financial security', item: '', points: '0', guidance: 'Use if financial security is relevant to the case e.g. ability to afford medications' },
+    { section: 'Subjective', label: 'Preventive: Immunizations/Seasonal Screening', item: 'UP TO DATE', points: '1', guidance: 'Use for things like past vaccinations, screening for infecitous risk' },
+    { section: 'Subjective', label: 'Preventive: Colon cancer screening', item: '', points: '0', guidance: 'Use for things like past cologard, colonoscopy, other' },
+    { section: 'Subjective', label: 'Preventive: Prostate cancer screening', item: '', points: '0', guidance: 'Use for things like past PSA levels or physical examinations' },
+    { section: 'Subjective', label: 'Preventive: Testicle cancer screening', item: '', points: '0', guidance: 'Use for self exam history or professional exams' },
+    { section: 'Subjective', label: 'Preventive: Breast cancer screening', item: '', points: '0', guidance: 'Use for things like mammograms, follow up studies after mammograms' },
+    { section: 'Subjective', label: 'Preventive: Cervical cancer screening', item: '', points: '0', guidance: 'Use for PAP history of having and results' },
+    { section: 'Subjective', label: 'Preventive: STI risks', item: '', points: '0', guidance: 'Use for things like condom use, partner history, exposure history, HIV PREP' },
+    { section: 'Subjective', label: 'Preventive: Exercise past/current', item: 'OCCASIONAL EXERCISE', points: '1', guidance: 'Use if referring to past or current exercise patterns. Planning goes in treatment plan.' },
+    { section: 'Subjective', label: 'Preventive: Diet', item: 'WELL BALANCED', points: '1', guidance: 'Use in regards to diet content rather than food security covered in social history. e.g. caffeine, processed foods, calorie intake' },
+    { section: 'Subjective', label: 'ROS: General Health', item: 'NO FEVERS OR CHILLS OR WEIGHT CHANGES', points: '1', guidance: '' },
+    { section: 'Subjective', label: 'ROS: Vision-Eye', item: '', points: '0', guidance: '' },
+    { section: 'Subjective', label: 'ROS: Head and Neck (includes Ear, Nose, Throat)', item: '', points: '0', guidance: '' },
+    { section: 'Subjective', label: 'ROS: Pulmonary', item: 'SHORTNESS OF BREATH', points: '1', guidance: '' },
+    { section: 'Subjective', label: 'ROS: Cardiovascular', item: 'NO CHEST PAIN OR PALPITATIONS', points: '1', guidance: '' },
+    { section: 'Subjective', label: 'ROS: Gastrointestinal', item: 'NO NAUSEA OR VOMITING OR DIARRHEA', points: '1', guidance: '' },
+    { section: 'Subjective', label: 'ROS: Genito-urinary', item: '', points: '0', guidance: '' },
+    { section: 'Subjective', label: 'ROS: Hematology/Oncology', item: '', points: '0', guidance: '' },
+    { section: 'Subjective', label: 'ROS: OB/GYN/BREAST', item: '', points: '0', guidance: '' },
+    { section: 'Subjective', label: 'ROS: Neurological', item: '', points: '0', guidance: '' },
+    { section: 'Subjective', label: 'ROS: Endocrine', item: '', points: '0', guidance: '' },
+    { section: 'Subjective', label: 'ROS: Infectious Disease', item: '', points: '0', guidance: '' },
+    { section: 'Subjective', label: 'ROS: Musculoskeletal', item: '', points: '0', guidance: '' },
+    { section: 'Subjective', label: 'ROS: Mental Health', item: '', points: '0', guidance: '' },
+    { section: 'Subjective', label: 'ROS: Skin and Hair', item: '', points: '0', guidance: '' },
+    { section: 'Objective', label: 'PE: Vital Signs', item: 'BP 120/70 HR 100 RR 22 OXYGEN SATURATION 91% TEMP 98.6', points: '1', guidance: 'The system can look for the specific numbers or simply look for headers of BP, HR, RR, Pulse oximetry and has good tolerance for abbreviations.' },
+    { section: 'Objective', label: 'PE: Height and Weight', item: 'HT 5\'6" WT 189 POUNDS', points: '1', guidance: 'As long as the words (or abbreviations) height and weight are here, they will get credit.' },
+    { section: 'Objective', label: 'PE: General', item: 'UNCOMFORTABLE, OUT OF BREATH, SEATED', points: '1', guidance: 'Item should ask for specific terms such as "cachectic, high BMI, mobile or immobile, etc."' },
+    { section: 'Objective', label: 'PE: Neurological', item: '', points: '0', guidance: '' },
+    { section: 'Objective', label: 'PE: Head', item: 'NCAT', points: '1', guidance: '' },
+    { section: 'Objective', label: 'PE: Eyes', item: '', points: '0', guidance: '' },
+    { section: 'Objective', label: 'PE: Ears', item: '', points: '0', guidance: '' },
+    { section: 'Objective', label: 'PE: Nose', item: 'NARES PATENT, SEPTUM MIDLINE', points: '1', guidance: '' },
+    { section: 'Objective', label: 'PE: Mouth/Throat', item: 'NO EXUDATES OR ERYTHEMA, UVULA MIDLINE', points: '1', guidance: '' },
+    { section: 'Objective', label: 'PE: Neck ', item: 'NO LYMPHADENOPATHY, TRACHEA MIDLINE', points: '1', guidance: '' },
+    { section: 'Objective', label: 'PE: Lungs', item: 'BILATERAL EXPIRATORY WHEEZING', points: '1', guidance: '' },
+    { section: 'Objective', label: 'PE: Heart', item: 'RRR, NO MURMURS', points: '1', guidance: '' },
+    { section: 'Objective', label: 'PE: Abdomen', item: 'SOFT, NONTENDER, NONDISTENDED, +BS IN ALL FOUR QUADRANTS', points: '1', guidance: '' },
+    { section: 'Objective', label: 'PE: Pelvic', item: '', points: '0', guidance: '' },
+    { section: 'Objective', label: 'PE: Vascular', item: '', points: '0', guidance: '' },
+    { section: 'Objective', label: 'PE: Extremities', item: '', points: '0', guidance: '' },
+    { section: 'Objective', label: 'PE: Musculoskeletal', item: '', points: '0', guidance: '' },
+    { section: 'Objective', label: 'PE: Osteopathic', item: 'UPPER THORACIC TENDERNESS', points: '1', guidance: 'details on spine level, muscle character, tissue abnormality, symmetry or asymmetry, restriction of motion, tenderness (TAART findings)' },
+    { section: 'Assessment', label: 'DDx 1', item: 'ASTHMA EXACERBATION', points: '1', guidance: 'Most likely or actual diagnosis should be listed first, with ideally descending order of likelihood.' },
+    { section: 'Assessment', label: 'DDx 1Justification Item', item: '', points: '0', guidance: 'DDx justification items may or may not be used. Example: for PE history of long plane trip might be used to justify putting PE on the DDx. Leave justification sections blank if not using.' },
+    { section: 'Assessment', label: 'DDx 2', item: 'SOMATIC DYSFUNCTION', points: '1', guidance: '' },
+    { section: 'Assessment', label: 'DDx 2 Justification Item', item: '', points: '0', guidance: '' },
+    { section: 'Assessment', label: 'DDx 3', item: 'MARIJUANA USE', points: '1', guidance: '' },
+    { section: 'Assessment', label: 'DDx 3 Justification Item', item: '', points: '0', guidance: '' },
+    { section: 'Assessment', label: 'DDx 4', item: 'DIAGNOSIS 4', points: '1', guidance: '' },
+    { section: 'Assessment', label: 'DDx 4 Justification Item', item: '', points: '0', guidance: '' },
+    { section: 'Assessment', label: 'DDx 5 ', item: 'DIAGNOSIS 5', points: '1', guidance: '' },
+    { section: 'Assessment', label: 'DDx 5 Justification Item', item: '', points: '0', guidance: '' },
+    { section: 'Plan', label: 'WU Item 1', item: 'CHEST XRAY', points: '1', guidance: '' },
+    { section: 'Plan', label: 'WU Justification for Item 1', item: '', points: '0', guidance: '' },
+    { section: 'Plan', label: 'WU Item 2', item: 'PEAK FLOW', points: '1', guidance: '' },
+    { section: 'Plan', label: 'WU Justification for Item 2', item: '', points: '0', guidance: '' },
+    { section: 'Plan', label: 'WU Item 3', item: 'SPIROMETRY', points: '1', guidance: '' },
+    { section: 'Plan', label: 'WU Item 4', item: 'COMPLETE BLOOD COUNT OR CBC OR CMP OR COMPLETE METABOLIC PANEL OR BLOOD GASSES', points: '1', guidance: '' },
+    { section: 'Plan', label: 'Tx Item 1', item: 'ALBUTEROL NEBULIZER', points: '1', guidance: '' },
+    { section: 'Plan', label: 'Tx Justification for Item 1', item: '', points: '0', guidance: '' },
+    { section: 'Plan', label: 'Tx Item 2', item: 'CORTICOSTEROIDS', points: '1', guidance: '' },
+    { section: 'Plan', label: 'Tx Item 3', item: 'OMT AS ABLE', points: '1', guidance: '' },
+    { section: 'Plan', label: 'Tx Item 4', item: 'OUTPATIENT OR INPATIENT', points: '1', guidance: '' },
+    { section: 'Plan', label: 'Tx Item 5', item: 'OXYGEN', points: '1', guidance: '' },
+    { section: 'Plan', label: 'Follow up Plan Item 1', item: 'FOLLOW UP IN DAYS', points: '1', guidance: '' },
+    { section: 'Plan', label: 'Pt Ed Item 1', item: 'MARIJUANA CESSATION', points: '1', guidance: '' },
+    { section: 'Plan', label: 'Humanistic- Item 1', item: 'MASK AT WORK', points: '1', guidance: '' },
+    { section: 'Plan', label: 'Humanistic- Item 2', item: 'SEEK EMERGENCY CARE INSTRUCTIONS GIVEN', points: '1', guidance: '' },
+  ];
+};
+
 export default function GeneratePage() {
   const [uploadedData, setUploadedData] = useState<CSVRow[]>([]);
   const [generatedData, setGeneratedData] = useState<CSVRow[]>([]);
   const [fileName, setFileName] = useState<string>('');
   const [isGenerated, setIsGenerated] = useState(false);
+  const [caseDescription, setCaseDescription] = useState<string>('');
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -1090,33 +1212,53 @@ export default function GeneratePage() {
   };
 
   const generateChecklist = () => {
-    console.log('Available reference keys:', Object.keys(REFERENCE_DATA).slice(0, 10));
-    console.log('Uploaded data sample:', uploadedData.slice(0, 10));
+    setIsLoading(true);
+    // Simulate loading delay
+    setTimeout(() => {
+      console.log('Available reference keys:', Object.keys(REFERENCE_DATA).slice(0, 10));
+      console.log('Uploaded data sample:', uploadedData.slice(0, 10));
 
-    const generated = uploadedData.map((row) => {
-      const key = `${row.section}_${row.label}`;
-      const reference = REFERENCE_DATA[key];
+      const generated = uploadedData.map((row) => {
+        const key = `${row.section}_${row.label}`;
+        const reference = REFERENCE_DATA[key];
 
-      if (!reference) {
-        console.log('❌ No match for key:', key);
-      } else {
-        console.log('✅ Found match for key:', key);
-      }
+        if (!reference) {
+          console.log('❌ No match for key:', key);
+        } else {
+          console.log('✅ Found match for key:', key);
+        }
 
-      if (reference) {
-        return {
-          ...row,
-          item: reference.item,
-          points: reference.points,
-          guidance: reference.guidance,
-        };
-      }
-      return row;
-    });
+        if (reference) {
+          return {
+            ...row,
+            item: reference.item,
+            points: reference.points,
+            guidance: reference.guidance,
+          };
+        }
+        return row;
+      });
 
-    console.log('Generated data:', generated.slice(0, 5));
-    setGeneratedData(generated);
-    setIsGenerated(true);
+      console.log('Generated data:', generated.slice(0, 5));
+      setGeneratedData(generated);
+      setIsGenerated(true);
+      setIsLoading(false);
+    }, 1500);
+  };
+
+  const generateFromCaseDescription = () => {
+    // Hardcoded: Always generate full Asthma CSV for now
+    if (caseDescription.trim()) {
+      setIsLoading(true);
+      // Simulate loading delay
+      setTimeout(() => {
+        const asthmaData = getAsthmaChecklistData();
+        setGeneratedData(asthmaData);
+        setIsGenerated(true);
+        setCaseDescription('');
+        setIsLoading(false);
+      }, 1500);
+    }
   };
 
   const handleCellEdit = (
@@ -1238,12 +1380,48 @@ export default function GeneratePage() {
           </div>
 
           {/* Back Button */}
-          <button className="mb-6 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded text-sm font-medium">
+          <button 
+            onClick={() => navigate('/')}
+            className="mb-6 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded text-sm font-medium cursor-pointer"
+          >
             ← Back to Event List
           </button>
 
           {/* Title */}
           <h1 className="text-3xl font-bold text-white mb-6">Generate Checklist</h1>
+
+          {/* Case Description Input Section */}
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-white mb-4">Enter Case Description</h2>
+            <div className="mb-4">
+              <input
+                type="text"
+                value={caseDescription}
+                onChange={(e) => setCaseDescription(e.target.value)}
+                placeholder="Enter Case Description"
+                className="w-full px-4 py-2 bg-slate-800/50 border border-slate-600 rounded text-slate-200 placeholder-slate-500 focus:outline-none"
+                onFocus={(e) => {
+                  e.target.style.borderColor = '#3DD1A5';
+                }}
+                onBlur={(e) => {
+                  e.target.style.borderColor = '';
+                }}
+                onKeyPress={(e) => {
+                  if (e.key === 'Enter') {
+                    generateFromCaseDescription();
+                  }
+                }}
+              />
+            </div>
+            <button
+              onClick={generateFromCaseDescription}
+              disabled={!caseDescription.trim() || isLoading}
+              className="px-6 py-2 rounded font-medium text-slate-900 hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+              style={{ backgroundColor: '#3DD1A5' }}
+            >
+              {isLoading ? 'Generating...' : 'Generate from Description'}
+            </button>
+          </div>
 
           {/* Upload Section */}
           <div className="mb-8">
@@ -1276,17 +1454,18 @@ export default function GeneratePage() {
             {uploadedData.length > 0 && !isGenerated && (
               <button
                 onClick={generateChecklist}
-                className="px-6 py-2 rounded font-medium text-slate-900 hover:opacity-90 transition"
+                disabled={isLoading}
+                className="px-6 py-2 rounded font-medium text-slate-900 hover:opacity-90 transition cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                 style={{ backgroundColor: '#3DD1A5' }}
               >
-                Generate Checklist Items
+                {isLoading ? 'Generating...' : 'Generate Checklist Items'}
               </button>
             )}
 
             {isGenerated && (
               <button
                 onClick={downloadCSV}
-                className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded font-medium"
+                className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded font-medium cursor-pointer"
               >
                 Download Generated CSV
               </button>
@@ -1413,12 +1592,12 @@ export default function GeneratePage() {
                 Total Points: <span className="font-semibold text-white">{totalPoints.toFixed(0)}</span>
               </div>
               <div className="flex gap-4">
-                <button className="px-6 py-2 bg-yellow-600 hover:bg-yellow-700 text-white rounded font-medium">
+                <button className="px-6 py-2 bg-yellow-600 hover:bg-yellow-700 text-white rounded font-medium cursor-pointer">
                   Previous
                 </button>
                 <button
                   onClick={downloadCSV}
-                  className="px-6 py-2 rounded font-medium text-slate-900 hover:opacity-90 transition"
+                  className="px-6 py-2 rounded font-medium text-slate-900 hover:opacity-90 transition cursor-pointer"
                   style={{ backgroundColor: '#3DD1A5' }}
                 >
                   Download CSV
@@ -1428,6 +1607,34 @@ export default function GeneratePage() {
           )}
         </main>
       </div>
+
+      {/* Loading Overlay */}
+      {isLoading && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center"
+          style={{
+            background: `
+              linear-gradient(180deg, rgba(43, 63, 71, 0.95) 0%, rgba(15, 19, 31, 0.95) 100%),
+              repeating-linear-gradient(0deg, rgba(255,255,255,0.08) 0px, rgba(255,255,255,0.08) 1px, transparent 1px, transparent 40px),
+              repeating-linear-gradient(90deg, rgba(255,255,255,0.08) 0px, rgba(255,255,255,0.08) 1px, transparent 1px, transparent 40px)
+            `,
+            backgroundSize: '100% 100%, 40px 40px, 40px 40px',
+          }}
+        >
+          <div className="text-center">
+            <div 
+              className="inline-block rounded-full h-16 w-16 mb-4 animate-spin"
+              style={{ 
+                border: '4px solid rgba(61, 209, 165, 0.2)',
+                borderTop: '4px solid #3DD1A5',
+                borderRight: '4px solid #3DD1A5',
+              }}
+            ></div>
+            <p className="text-white text-xl font-semibold">Generating Checklist...</p>
+            <p className="text-slate-400 text-sm mt-2">Please wait while we process your data</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

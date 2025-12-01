@@ -149,7 +149,10 @@ export default function UploadPage() {
           </div>
 
           {/* Back Button */}
-          <button className="mb-6 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded text-sm font-medium">
+          <button 
+            onClick={() => navigate('/')}
+            className="mb-6 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded text-sm font-medium cursor-pointer"
+          >
             ← Back to Event List
           </button>
 
@@ -225,11 +228,16 @@ export default function UploadPage() {
             </div>
             <p className="text-slate-300 text-sm mb-4">
               Upload a .csv or .xlsx file containing sectioned checklist items and weightages.{' '}
-              <a href="#" className="text-blue-400 underline">Quick Guide</a>
+              <a href="#" className="text-blue-400 underline cursor-pointer">Quick Guide</a>
             </p>
+            {fileName && (
+              <p className="text-slate-300 text-sm mb-4">
+                Uploaded: <span style={{ color: '#3DD1A5' }}>{fileName}</span>
+              </p>
+            )}
             <button
               onClick={() => navigate('/generate')}
-              className="px-6 py-2 rounded font-medium text-slate-900 hover:opacity-90 transition"
+              className="px-6 py-2 rounded font-medium text-slate-900 hover:opacity-90 transition cursor-pointer"
               style={{ backgroundColor: '#3DD1A5' }}
             >
               Generate Checklist
@@ -317,12 +325,12 @@ export default function UploadPage() {
               Total Points: <span className="font-semibold text-white">{totalPoints.toFixed(0)}</span>
             </div>
             <div className="flex gap-4">
-              <button className="px-6 py-2 bg-yellow-600 hover:bg-yellow-700 text-white rounded font-medium">
+              <button className="px-6 py-2 bg-yellow-600 hover:bg-yellow-700 text-white rounded font-medium cursor-pointer">
                 Previous
               </button>
               <button
                 onClick={() => navigate('/generate')}
-                className="px-6 py-2 rounded font-medium text-slate-900 hover:opacity-90 transition"
+                className="px-6 py-2 rounded font-medium text-slate-900 hover:opacity-90 transition cursor-pointer"
                 style={{ backgroundColor: '#3DD1A5' }}
               >
                 Finish
