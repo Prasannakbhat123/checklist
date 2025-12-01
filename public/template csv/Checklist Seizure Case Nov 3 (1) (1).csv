@@ -1,0 +1,187 @@
+,Checklist Item Form Label,Enter the Case Specific Item,"Point Value (Enter 1 for points, or leave blank for zero points and/or not grading the item)",Form Guidance (information for checklist builder)
+,,,,
+Subjective,,,,General Form Guidance:  This form gives guidance on checklist building for automated grading by giving suggested items within subsections.  Note that not all subsections would be used for all learners or learner levels. Not entering an item means that item will not be graded. Not entering a point value means it will not get a point assigned if the item is found.
+,CC and Demographics,,,
+,Chief Complaint,"""lost consciousness""",1,Novice learners may be asked to gather and document the chief complaint in their note.  This should be case specific so that they document the correct chief complaint. 
+,Name - Any Male or Female Name,any name,1,Any name will be given credit.
+,Patient Age or Date of Birth,age or date of birth,1,"Novice learners or learning settings with age not provided (initial triage nurse), the learners may be asked to gather and document the age or date of birth in their note.  "
+,Patient Sex Male or Female,male or female,1,The word male or female will get credit if this item is graded.
+,Patient Gender Identification,,,"If learners are to gather gender identification, this could be graded. Case specific grading requires the gender identification to be noted in the item."
+,History of Present Illness (HPI) Section [OLDCARTS is here],,,
+,HPI subitem onset timing,started last night ,1,When were symptoms first noticed?
+,HPI subitem onset speed,,,Did the symptoms begin rapidly or slowly? 
+,HPI subitem duration,,,How long have you had the symptoms?
+,HPI subitem duration,lasted about one minute,1,How long do episodes of pain last?
+,HPI subitem timing,,,"Is there a pattern of the timing of the pain (day/night, situational timing)?"
+,HPI subitem location,,,Where on the body is your pain or describe where you are feeling the symptom?
+,HPI subitem location radiation,,,Does the pain move anywhere else or radiate from one spot to another?
+,HPI subitem character,shaking all over,1,"Describe the nature of the pain or symptom  i.e. sharp, burning, throbbing, dull, aching, pressure, stabbing, tingling    
+Also consider other descriptors patients might use, ""like a vise"" or ""someone sitting on my chest"" or ""winded like I exercised but I didn't""
+Also consider ""similar nature to my prior symptoms"" or ""different than prior symptoms"""
+,HPI subitem severity,,,How severe is you pain? How does this compare to past episodes?
+,HPI subitem severity scale required,it was an 8 on a scale of 1 to 10,1,How severe is the pain on a scale of 0-10?
+,HPI subitem aggravating factors,recent cessation of alcohol,1,"Are there activities (eating, exercise, standing, etc.) that make the symptom worse?  Have you noticed things that trigger the symptoms?"
+,HPI subitem relieving factors,,,"Have you found something that relieves the symptoms (medication, position, eating, etc.)?"
+,HPI subitem relevant exposures,,,"Any relevant infectious or occuptional exposures? (e.g. covid illness in sibling, asbestos exposure)"
+,OutcomeAdditional Circumstances/Signs or Symptoms/Affecting life,,,Consider the learning objectives and relevance of such topics.
+,Past Medical History Section,,,
+,PMH: Similar episodes,No prior seizures,1,"Items like past episodes of the symptom, visits for this, past treatment response"
+,PMH: Active Problem List,hypertension,1,Active diagnoses with or without treatment
+,PMH: Hospitalizations and Past Illness,,,Hospitalizations and old or remote illnesses
+,PMH: Medications: Medication name,HCTZ,1,"Medication names (if faculty note the generic and trade names credit will be given for either, likewise credit will be given for acceptable abbreviations listed)"
+,PMH: Medications: Dosing,,,"Medication route, frequency"
+,"PMH: Medications: Adherence (previously called ""compliance"")",adherent or taking the medication,1,Documentation of medication adherence
+,PMH: Allergies medications,none or NKDA,1,"
+If allergy item gives both trade and generic then either noted by the learner would count.  If the item notes what the reactions is, then that would be needed be needed for credit e.g. erythromycin causes hives.  If the reaction type is not noted, it will not be graded."
+,PMH: Allergies food or environmental,,,"If the reaction type is not noted, it will not be graded."
+,PMH: Recovery or Abstinence from any substances or alcohol,"heavy alcohol use (two 750 mL bottles of spirits per week), recently quit drinking 1 week ago",1,"For capture of prior addiction treatment, recovery status"
+,PSH: Past Surgeries,no surgeries,1,"Specific and separate headings for past surgical history, abbrevations count, option to make each surgery noted an item, or simply capture a list.
+"
+,PSH: Complications,,,Only use if relevant to case learning objectives.
+,,,,
+,Section: Family History,,,
+,FH: HPI Relevant ,"mom died of brain cancer, dad died of effects of alcoholism",1,Items that are relevant to an active CC-HPI combination.  e.g. FH of heart disease in a chest pain patient
+,FH: Preventive Relevant,colonoscopy 10 years ago was normal ,1,"Items that are relevant to any wellness or preventive visit.  This would include genetic diseases, risks for cancer, prior occupational exposures, etc."
+,,,,
+,Section: Social History,,,Use only those sections relevant to learning or testing objectives
+,SH: relationships and/or marital status,divorced,1,
+,SH: children,,,
+,SH: occupation,,,
+,SH: military service,,,
+,SH: alcohol use,heavy alcohol use for 40 years suddenly stopped,1,Use if current alcohol use is relevant to the case.
+,SH: tobacco product use,,,
+,SH: vaping use,,,
+,SH: non-prescribed drug use,,,
+,SH: housing security,,,Use if housing security discussion is relevant to the case
+,SH: food security,,,Use of food security discussion is relevant to the case
+,SH: physical security,,,Use if physical security (risk of interpersonal violence) is relevant to the case
+,SH: financial security,,,Use if financial security is relevant to the case e.g. ability to afford medications
+,,,,
+,Preventive Health,,,
+,Preventive: Immunizations/Seasonal Screening,Immunizations UTD,1,"Use for things like past vaccinations, screening for infecitous risk"
+,Preventive: Colon cancer screening,colon cancer screen 10 years ago,1,"Use for things like past cologard, colonoscopy, other"
+,Preventive: Prostate cancer screening,,,Use for things like past PSA levels or physical examinations
+,Preventive: Testicle cancer screening,,,Use for self exam history or professional exams
+,Preventive: Breast cancer screening,,,"Use for things like mammograms, follow up studies after mammograms"
+,Preventive: Cervical cancer screening,,,Use for PAP history of having and results
+,Preventive: STI risks,,,"Use for things like condom use, partner history, exposure history, HIV PREP"
+,Preventive: Exercise past/current,,,Use if referring to past or current exercise patterns.  Planning goes in treatment plan.
+,Preventive: Diet,,,"Use in regards to diet content rather than food security covered in social history.  e.g. caffeine, processed foods, calorie intake"
+,Review of Systems,,,ROS items should be relevant and case specific.  Good place to have pertinent negatives as items.
+,,,,
+,ROS: General Health,trouble sleeping,1,
+,ROS: Vision-Eye,,,
+,"ROS: Head and Neck (includes Ear, Nose, Throat)",,,
+,ROS: Pulmonary,,,
+,ROS: Cardiovascular,,,
+,ROS: Gastrointestinal,,,
+,ROS: Genito-urinary,,,
+,ROS: Hematology/Oncology,,,
+,ROS: OB/GYN/BREAST,,,
+,ROS: Neurological,,,
+,ROS: Endocrine,,,
+,ROS: Infectious Disease,,,
+,ROS: Musculoskeletal,,,
+,ROS: Mental Health,,,
+,ROS: Skin and Hair,,,
+,,,,
+Objective,Physical Examination,,,Suggest items that are important to the case including those that would yield pertinent positives or pertinent negatives.
+,,,,
+,"PE: Vital Signs: Temperature (Temp, T)","Temperature (Temp, T)",1,Enter the specific temperature and units of F or C
+,PE: Vital Signs: Heart Rate (HR),Heart Rate (HR),1,Enter the specific HR
+,PE: Vital Signs: Respiratory Rate (RR),Respiratory Rate (RR),1,Enter the specific RR
+,PE: Vital Signs: Blood Pressure (BP),Blood Pressure (BP),1,Enter the specific BP in format systolic number/diastoic number
+,PE: Vital Signs: Pulse Oximetry (POx),Pulse Ox (Pox),,Enter the specific Pox % value
+,PE: Vital Signs: Height (Hgt),"Height (hgt, ht)",1,Enter the height in the same units that will be used on site. (english or metric)
+,PE: Vital Signs: Weight (Wgt),"Weight (wgt, wt)",1,Enter the weight in the same units that will be used on site. (english or metric)
+,PE: General,"WDWN, slightly anxious",1,"Item should ask for specific terms such as ""cachectic, high BMI, mobile or immobile, etc."""
+,PE: Neurological,abnormal finger-nose-finger test,1,
+,PE: Head,NCAT,1,
+,PE: Eyes,"PERRLA, EOMI",1,
+,PE: Ears,,,
+,PE: Nose,,,
+,PE: Mouth/Throat,,,
+,PE: Neck ,,,
+,PE: Lungs,,,
+,PE: Heart,,,
+,PE: Abdomen,,,
+,PE: Pelvic,,,
+,PE: Vascular,,,
+,PE: Extremities,,,
+,PE: Musculoskeletal,,,
+,PE: Osteopathic,Tissue texture abnormaility and tenderness mid thoracic spine,1,"details on spine level, muscle character, tissue abnormality, symmetry or asymmetry, restriction of motion, tenderness (TAART findings)"
+,,,,
+,,,,
+,,,,
+Assessment,"Assessment, New Active Problems, Differential Diagnoses",,,Include an osteopathic diagnosis as appropriate.  
+,DDx 1,generalized tonic-clonic seizure,1,"Most likely or actual diagnosis should be listed first, with ideally descending order of likelihood. "
+,DDx 1Justification Item,,,DDx justification items may or may not be used.  Example: for PE history of long plane trip might be used to justify putting PE on the DDx.  Leave justification sections blank if not using.
+,DDx 2,Alcohol withdrawal,1,
+,DDx 2 Justification Item,,,
+,DDx 3,Thoracic somatic dysfunction,1,
+,DDx 3 Justification Item,,,
+,DDx 4,Dysmetria,1,
+,DDx 4 Justification Item,,,
+,DDx 5 ,,,
+,DDx 5 Justification Item,,,
+,,,,
+Plan,Work Up aka Evaluation Plan aka Diagnostic Evaluation Plan,,,"Items might include: laboratory studies, radiologic studies, specialty consultation"
+,,,,
+,WU Item 1,CT head,1,
+,WU Item 2,EEG,1,
+,WU Item 3,"Sodium and other electolytes, or BMP or CMP",1,
+,WU Item 4,consider liver enzymes due to alcohol abuse, ,
+,WU Item 5,consider referral to neurology,1,
+,WU Item 6,,,
+,WU Item 7,,,
+,WU Item 8,,,
+,WU Item 9,,,
+,WU Item 10,,,
+,WU Item 11,,,
+,WU Item 12,,,
+,WU Item 13,,,
+,WU Item 14,,,
+,WU Item 15,,,
+,WU Item 16,,,
+,,,,
+,Treatment Plan,,,"Items might include referrals to various therapies (PT, OT, psychology), pharmacologic and not pharmacologic treatment suggestions"
+,Tx Item 1,consider benzodiazepine or gabapentin or carbamezepine,1,
+,Tx Item 2,Alcohol rehabilitation,1,
+,Tx Item 3,consider anticonvulsant,1,
+,Tx Item 4,,,
+,Tx Item 5,,,
+,Tx Item 6,,,
+,Tx Item 7,,,
+,Tx Item 8,,,
+,Tx Item 9,,,
+,Tx Item 10,,,
+,,,,
+,Follow up Planning,,,Specific timing is ideal along with clarity on return to primary care or follow up with specialty care.
+,Follow up Plan Item 1,within 1 week,1,
+,Follow up Plan Item 2,,,
+,Follow up Plan Item 3,,,
+,Follow up Plan Item 4,,,
+,Follow up Plan Item 5,,,
+,Follow up Plan Item 6,,,
+,Follow up Plan Item 7,,,
+,Follow up Plan Item 8,,,
+,Follow up Plan Item 9,,,
+,Follow up Plan Item 10,,,
+,,,,
+,Patient Education Covered,,,"Patient education or counseling on any case related topic could be come an item (alcohol risks, tobacco risks, cannabis risks, general pregnancy, wound care, etc.)"
+,Pt Ed Item 1,effects of alcohol withdrawal on seizures,1,
+,Pt Ed Item 2,,,
+,Pt Ed Item 3,,,
+,Pt Ed Item 4,,,
+,Pt Ed Item 5,,,
+,,,,
+,Humanistic Concerns,,,"Humanistic concerns includes how things like social influences on health may impact their health or illness states, but is not limited to SDOH"
+,Humanistic- Item 1,stop driving a car or DMV form to stop driving privileges,1,
+,Humanistic- Item 2,"healthy diet, vitamins",1,
+,Humanistic- Item 3,,,
+,Humanistic- Item 4,,,
+,Humanistic- Item 5,,,
+,,,,
+,Challenge Questions,,,
+,,,,
+,Total Points Available,,49,

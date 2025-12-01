@@ -1,0 +1,184 @@
+Student Input Fields Being Graded,Checklist Item Form Label,Enter the Case Specific Item,"Point Value (Enter 1 for points, or leave blank for zero points and/or not grading the item)",Form Guidance (information for checklist builder)
+,,,,
+,,,,General Form Guidance:  This form gives guidance on checklist building for automated grading by giving suggested items within subsections.  Note that not all subsections would be used for all learners or learner levels. Not entering an item means that item will not be graded. Not entering a point value means it will not get a point assigned if the item is found.
+Subjective,CC and Demographics,,,
+,CC: Chief Complaint,"""Shortness of Breath""",1,Novice learners may be asked to gather and document the chief complaint in their note.  This should be case specific so that they document the correct chief complaint. 
+,Dem: Name - Female,INSERT PATIENT NAME FOR GRADING - need the alternate name below if male-female actors,1,"If a point is desired for the name, and a male or female actor may play with different names, use both names in the male and female items, knowing that only 1 point will be acquired either way."
+,Dem: Name - Male,INSERT PATIENT NAME FOR GRADING - need the alternate name above if male-female actors,1,
+,Dem: Patient Age or Date of Birth,30 years,1,"Novice learners or learning settings with age not provided (initial triage nurse), the learners may be asked to gather and document the age or date of birth in their note.  "
+,Dem: Patient Biological Sex,INSERT PAITENT BIOLOGICAL SEX,1,"If learners are to gather biologic sex, the presence or absence of sex designation may be graded.  Case specific grading requires the sex designation to be noted in the item."
+,Dem: Patient Gender Identification,,0,"If learners are to gather gender identification, this could be graded. Case specific grading requires the gender identification to be noted in the item."
+,History of Present Illness (HPI:) Section [OLDCARTS is here],,,
+,HPI: subitem onset timing,A FEW (FOUR) MONTHS AGO,1,When were symptoms first noticed?
+,HPI: subitem onset speed,,0,Did the symptoms begin rapidly or slowly? 
+,HPI: subitem duration,A FEW (FOUR) MONTHS OR SINCE STARTING NEW JOB,1,How long have you had the symptoms?
+,HPI: subitem duration,UNITL RESCUE INHALER IS USED,1,How long do episodes of pain last?
+,HPI: subitem timing,AT WORK,1,"Is there a pattern of the timing of the pain (day/night, situational timing)?"
+,HPI: subitem location,IN THE CHEST,1,Where on the body is your pain or describe where you are feeling the symptom?
+,HPI: subitem location radiation,NO RADIATION,1,Does the pain move anywhere else or radiate from one spot to another?
+,HPI: subitem character,TIGHTNESS IN THE CHEST,1,"Describe the nature of the pain or symptom  i.e. sharp, burning, throbbing, dull, aching, pressure, stabbing, tingling    
+Also consider other descriptors patients might use, ""like a vise"" or ""someone sitting on my chest"" or ""winded like I exercised but I didn't""
+Also consider ""similar nature to my prior symptoms"" or ""different than prior symptoms"""
+,HPI: subitem severity,,0,How severe is you pain? How does this compare to past episodes?
+,HPI: subitem severity scale required,7 out of 10,1,How severe is the pain on a scale of 0-10?
+,HPI: subitem aggravating factors,WORKING,1,"Are there activities (eating, exercise, standing, etc.) that make the symptom worse?  Have you noticed things that trigger the symptoms?"
+,HPI: subitem relieving factors,RESCUE (ALBUTEROL) INHALER,1,"Have you found something that relieves the symptoms (medication, position, eating, etc.)?"
+,HPI: subitem relevant exposures,SAW DUST,1,"Any relevant infectious or occuptional exposures? (e.g. covid illness in sibling, asbestos exposure)"
+,HPI: OutcomeAdditional Circumstances/Signs or Symptoms/Affecting life,FEAR OF LOSING JOB,1,Consider the learning objectives and relevance of such topics.
+,Past Medical History Section,,,
+,PMH: Similar episodes,AS A CHILD,1,"Items like past episodes of the symptom, visits for this, past treatment response"
+,PMH: Active Problem List,NONE,1,Active diagnoses with or without treatment
+,PMH: Hospitalizations and Past Illness,NONE,1,Hospitalizations and old or remote illnesses
+,PMH: Medications: Medication name,ALBUTEROL INHALER,1,"Medication names (if faculty note the generic and trade names credit will be given for either, likewise credit will be given for acceptable abbreviations listed)"
+,PMH: Medications: Dosing,2 PUFFS AS NEEDED,1,"Medication route, frequency"
+,PMH: Medications: Adherence,COMPLIANT OR ADHERANT OR USING AS DIRECTED,1,Documentation of medication adherence
+,PMH: Allergies medications,NONE,1,"
+If allergy item gives both trade and generic then either noted by the learner would count.  If the item notes what the reactions is, then that would be needed be needed for credit e.g. erythromycin causes hives.  If the reaction type is not noted, it will not be graded."
+,PMH: Allergies food or environmental,NONE,1,"If the reaction type is not noted, it will not be graded."
+,PMH: Recovery or Abstinence from any substances or alcohol,,0,"For capture of prior addiction treatment, recovery status"
+,PSH: Past Surgeries,NONE,1,"Specific and separate headings for past surgical history, abbrevations count, option to make each surgery noted an item, or simply capture a list.
+"
+,PSH: Complications,,0,Only use if relevant to case learning objectives.
+,,,,
+,Section: Family History,,,
+,FH: HPI: Relevant,ADOPTED,1,Items that are relevant to an active CC-HPI: combination.  e.g. FH of heart disease in a chest pain patient
+,FH: Preventive Relevant,,0,"Items that are relevant to any wellness or preventive visit.  This would include genetic diseases, risks for cancer, prior occupational exposures, etc."
+,,,,
+,Section: Social History,,,Use only those sections relevant to learning or testing objectives
+,SH: relationships and/or marital status,SINGLE,1,
+,SH: children,,0,
+,SH: occupation,ENGINEER,1,
+,SH: military service,,0,
+,SH: alcohol use,NONE,1,Use if current alcohol use is relevant to the case.
+,SH: tobacco product use,NONE,1,
+,SH: vaping use,NONE,1,
+,SH: non-prescribed drug use,MARIJUANA,1,
+,SH: housing security,,0,Use if housing security discussion is relevant to the case
+,SH: food security,,0,Use of food security discussion is relevant to the case
+,SH: physical security,,0,Use if physical security (risk of interpersonal violence) is relevant to the case
+,SH: financial security,,0,Use if financial security is relevant to the case e.g. ability to afford medications
+,,,,
+,Preventive Health,,,
+,Preventive: Immunizations/Seasonal Screening,UP TO DATE,1,"Use for things like past vaccinations, screening for infecitous risk"
+,Preventive: Colon cancer screening,,0,"Use for things like past cologard, colonoscopy, other"
+,Preventive: Prostate cancer screening,,0,Use for things like past PSA levels or physical examinations
+,Preventive: Testicle cancer screening,,0,Use for self exam history or professional exams
+,Preventive: Breast cancer screening,,0,"Use for things like mammograms, follow up studies after mammograms"
+,Preventive: Cervical cancer screening,,0,Use for PAP history of having and results
+,Preventive: STI risks,,0,"Use for things like condom use, partner history, exposure history, HIV PREP"
+,Preventive: Exercise past/current,OCCASIONAL EXERCISE,1,Use if referring to past or current exercise patterns.  Planning goes in treatment plan.
+,Preventive: Diet,WELL BALANCED,1,"Use in regards to diet content rather than food security covered in social history.  e.g. caffeine, processed foods, calorie intake"
+,Review of Systems,,,ROS items should be relevant and case specific.  Good place to have pertinent negatives as items.
+,,,,
+,ROS: General Health,NO FEVERS OR CHILLS OR WEIGHT CHANGES,1,
+,ROS: Vision-Eye,,0,
+,"ROS: Head and Neck (includes Ear, Nose, Throat)",,0,
+,ROS: Pulmonary,SHORTNESS OF BREATH,1,
+,ROS: Cardiovascular,NO CHEST PAIN OR PALPITATIONS,1,
+,ROS: Gastrointestinal,NO NAUSEA OR VOMITING OR DIARRHEA,1,
+,ROS: Genito-urinary,,0,
+,ROS: Hematology/Oncology,,0,
+,ROS: OB/GYN/BREAST,,0,
+,ROS: Neurological,,0,
+,ROS: Endocrine,,0,
+,ROS: Infectious Disease,,0,
+,ROS: Musculoskeletal,,0,
+,ROS: Mental Health,,0,
+,ROS: Skin and Hair,,0,
+,,,,
+Objective,Physical Examination,,,Suggest items that are important to the case including those that would yield pertinent positives or pertinent negatives.
+,,,,
+,PE: Vital Signs,BP 120/70 HR 100 RR 22 OXYGEN SATURATION 91% TEMP 98.6,1,"The system can look for the specific numbers or simply look for headers of BP, HR, RR, Pulse oximetry and has good tolerance for abbreviations."
+,PE: Height and Weight,"HT 5'6"" WT 189 POUNDS",1,"As long as the words (or abbreviations) height and weight are here, they will get credit."
+,PE: General,"UNCOMFORTABLE, OUT OF BREATH, SEATED",1,"Item should ask for specific terms such as ""cachectic, high BMI, mobile or immobile, etc."""
+,PE: Neurological,,0,
+,PE: Head,NCAT,1,
+,PE: Eyes,,,
+,PE: Ears,,,
+,PE: Nose,"NARES PATENT, SEPTUM MIDLINE",1,
+,PE: Mouth/Throat,"NO EXUDATES OR ERYTHEMA, UVULA MIDLINE",1,
+,PE: Neck ,"NO LYMPHADENOPATHY, TRACHEA MIDLINE",1,
+,PE: Lungs,BILATERAL EXPIRATORY WHEEZING,1,
+,PE: Heart,"RRR, NO MURMURS",1,
+,PE: Abdomen,"SOFT, NONTENDER, NONDISTENDED, +BS IN ALL FOUR QUADRANTS",1,
+,PE: Pelvic,,0,
+,PE: Vascular,,0,
+,PE: Extremities,,0,
+,PE: Musculoskeletal,,0,
+,PE: Osteopathic,UPPER THORACIC TENDERNESS,1,"details on spine level, muscle character, tissue abnormality, symmetry or asymmetry, restriction of motion, tenderness (TAART findings)"
+,,,,
+,,,,
+,,,,
+Assessment,"Assessment, New Active Problems, Differential Diagnoses",,,Include an osteopathic diagnosis as appropriate.  
+,DDx 1,ASTHMA EXACERBATION,1,"Most likely or actual diagnosis should be listed first, with ideally descending order of likelihood. "
+,DDx 1Justification Item,,,DDx justification items may or may not be used.  Example: for PE history of long plane trip might be used to justify putting PE on the DDx.  Leave justification sections blank if not using.
+,DDx 2,SOMATIC DYSFUNCTION,1,
+,DDx 2 Justification Item,,,
+,DDx 3,MARIJUANA USE,1,
+,DDx 3 Justification Item,,,
+,DDx 4,DIAGNOSIS 4,1,
+,DDx 4 Justification Item,,,
+,DDx 5 ,DIAGNOSIS 5,1,
+,DDx 5 Justification Item,,,
+,,,,
+Plan,Work Up aka Evaluation Plan aka Diagnostic Evaluation Plan,,,"Items might include: laboratory studies, radiologic studies, specialty consultation"
+,,,,
+,WU Item 1,CHEST XRAY,1,
+,WU Justification for Item 1,,,
+,WU Item 2,PEAK FLOW,1,
+,WU Justification for Item 2,,,
+,WU Item 3,SPIROMETRY,1,
+,WU Item 4,COMPLETE BLOOD COUNT OR CBC OR CMP OR COMPLETE METABOLIC PANEL OR BLOOD GASSES,1,
+,WU Item 5,,,
+,WU Item 6,,,
+,WU Item 7,,,
+,WU Item 8,,,
+,WU Item 9,,,
+,WU Item 10,,,
+,WU Item 11,,,
+,WU Item 12,,,
+,WU Item 13,,,
+,WU Item 14,,,
+,WU Item 15,,,
+,WU Item 16,,,
+,,,,
+,Treatment Plan,,,"Items might include referrals to various therapies (PT, OT, psychology), pharmacologic and not pharmacologic treatment suggestions"
+,Tx Item 1,ALBUTEROL NEBULIZER,1,
+,Tx Justification for Item 1,,,
+,Tx Item 2,CORTOCOSTEROIDS,1,
+,Tx Item 3,OMT AS ABLE,1,
+,Tx Item 4,OUTPATIENT OR INPATIENT,1,
+,Tx Item 5,OXYGEN,1,
+,Tx Item 6,,,
+,Tx Item 7,,,
+,Tx Item 8,,,
+,Tx Item 9,,,
+,Tx Item 10,,,
+,,,,
+,Follow up Planning,,,Specific timing is ideal along with clarity on return to primary care or follow up with specialty care.
+,Follow up Plan Item 1,FOLLOW UP IN DAYS,1,
+,Follow up Plan Item 2,,,
+,Follow up Plan Item 3,,,
+,Follow up Plan Item 4,,,
+,Follow up Plan Item 5,,,
+,Follow up Plan Item 6,,,
+,Follow up Plan Item 7,,,
+,Follow up Plan Item 8,,,
+,Follow up Plan Item 9,,,
+,Follow up Plan Item 10,,,
+,,,,
+,Patient Education Covered,,,"Patient education or counseling on any case related topic could be come an item (alcohol risks, tobacco risks, cannabis risks, general pregnancy, wound care, etc.)"
+,Pt Ed Item 1,MARIJUANA CESSATION,1,
+,Pt Ed Item 2,,,
+,Pt Ed Item 3,,,
+,Pt Ed Item 4,,,
+,Pt Ed Item 5,,,
+,,,,
+,Humanistic Concerns,,,"Humanistic concerns includes how things like social influences on health may impact their health or illness states, but is not limited to SDOH"
+,Humanistic- Item 1,MASK AT WORK,1,
+,Humanistic- Item 2,SEEK EMERGENCY CARE INSTRUCTIONS GIVEN,1,
+,Humanistic- Item 3,,,
+,Humanistic- Item 4,,,
+,Humanistic- Item 5,,,
+,,,,
+,Challenge Questions,,,

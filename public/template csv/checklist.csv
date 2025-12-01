@@ -1,0 +1,179 @@
+﻿,Checklist Item Form Label
+,
+Subjective,
+,CC and Demographics
+,Chief Complaint
+,Name - Any Male or Female Name
+,Patient Age or Date of Birth
+,Patient Sex Male or Female
+,Patient Gender Identification
+,History of Present Illness (HPI) Section [OLDCARTS is here]
+,HPI subitem onset timing
+,HPI subitem onset speed
+,HPI subitem duration
+,HPI subitem duration
+,HPI subitem timing
+,HPI subitem location
+,HPI subitem location radiation
+,HPI subitem character
+,HPI subitem severity
+,HPI subitem severity scale required
+,HPI subitem aggravating factors
+,HPI subitem relieving factors
+,HPI subitem relevant exposures
+,OutcomeAdditional Circumstances/Signs or Symptoms/Affecting life
+,Past Medical History Section
+,PMH: Similar episodes
+,PMH: Active Problem List
+,PMH: Hospitalizations and Past Illness
+,PMH: Medications: Medication name
+,PMH: Medications: Dosing
+,"PMH: Medications: Adherence (previously called ""compliance"")"
+,PMH: Allergies medications
+,PMH: Allergies food or environmental
+,PMH: Recovery or Abstinence from any substances or alcohol
+,PSH: Past Surgeries
+,PSH: Complications
+,
+,Section: Family History
+,FH: HPI Relevant 
+,FH: Preventive Relevant
+,
+,Section: Social History
+,SH: relationships and/or marital status
+,SH: children
+,SH: occupation
+,SH: military service
+,SH: alcohol use
+,SH: tobacco product use
+,SH: vaping use
+,SH: non-prescribed drug use
+,SH: housing security
+,SH: food security
+,SH: physical security
+,SH: financial security
+,
+,Preventive Health
+,Preventive: Immunizations/Seasonal Screening
+,Preventive: Colon cancer screening
+,Preventive: Prostate cancer screening
+,Preventive: Testicle cancer screening
+,Preventive: Breast cancer screening
+,Preventive: Cervical cancer screening
+,Preventive: STI risks
+,Preventive: Exercise past/current
+,Preventive: Diet
+,Review of Systems
+,
+,ROS: General Health
+,ROS: Vision-Eye
+,"ROS: Head and Neck (includes Ear, Nose, Throat)"
+,ROS: Pulmonary
+,ROS: Cardiovascular
+,ROS: Gastrointestinal
+,ROS: Genito-urinary
+,ROS: Hematology/Oncology
+,ROS: OB/GYN/BREAST
+,ROS: Neurological
+,ROS: Endocrine
+,ROS: Infectious Disease
+,ROS: Musculoskeletal
+,ROS: Mental Health
+,ROS: Skin and Hair
+,
+Objective,Physical Examination
+,
+,"PE: Vital Signs: Temperature (Temp, T)"
+,PE: Vital Signs: Heart Rate (HR)
+,PE: Vital Signs: Respiratory Rate (RR)
+,PE: Vital Signs: Blood Pressure (BP)
+,PE: Vital Signs: Pulse Oximetry (POx)
+,PE: Vital Signs: Height (Hgt)
+,PE: Vital Signs: Weight (Wgt)
+,PE: General
+,PE: Neurological
+,PE: Head
+,PE: Eyes
+,PE: Ears
+,PE: Nose
+,PE: Mouth/Throat
+,PE: Neck 
+,PE: Lungs
+,PE: Heart
+,PE: Abdomen
+,PE: Pelvic
+,PE: Vascular
+,PE: Extremities
+,PE: Musculoskeletal
+,PE: Osteopathic
+,
+,
+,
+Assessment,"Assessment, New Active Problems, Differential Diagnoses"
+,DDx 1
+,DDx 1Justification Item
+,DDx 2
+,DDx 2 Justification Item
+,DDx 3
+,DDx 3 Justification Item
+,DDx 4
+,DDx 4 Justification Item
+,DDx 5 
+,DDx 5 Justification Item
+,
+Plan,Work Up aka Evaluation Plan aka Diagnostic Evaluation Plan
+,
+,WU Item 1
+,WU Item 2
+,WU Item 3
+,WU Item 4
+,WU Item 5
+,WU Item 6
+,WU Item 7
+,WU Item 8
+,WU Item 9
+,WU Item 10
+,WU Item 11
+,WU Item 12
+,WU Item 13
+,WU Item 14
+,WU Item 15
+,WU Item 16
+,
+,Treatment Plan
+,Tx Item 1
+,Tx Item 2
+,Tx Item 3
+,Tx Item 4
+,Tx Item 5
+,Tx Item 6
+,Tx Item 7
+,Tx Item 8
+,Tx Item 9
+,Tx Item 10
+,
+,Follow up Planning
+,Follow up Plan Item 1
+,Follow up Plan Item 2
+,Follow up Plan Item 3
+,Follow up Plan Item 4
+,Follow up Plan Item 5
+,Follow up Plan Item 6
+,Follow up Plan Item 7
+,Follow up Plan Item 8
+,Follow up Plan Item 9
+,Follow up Plan Item 10
+,
+,Patient Education Covered
+,Pt Ed Item 1
+,Pt Ed Item 2
+,Pt Ed Item 3
+,Pt Ed Item 4
+,Pt Ed Item 5
+,
+,Humanistic Concerns
+,Humanistic- Item 1
+,Humanistic- Item 2
+,Humanistic- Item 3
+,Humanistic- Item 4
+,Humanistic- Item 5
